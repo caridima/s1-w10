@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 public class TrafficLight extends JPanel implements MouseListener{
-
+    private int x;
     private int xClick = -11111;
 	private int yClick = -11111;
     public TrafficLight() {
@@ -22,17 +22,20 @@ public class TrafficLight extends JPanel implements MouseListener{
 			g.drawOval(100,100, 200,200);
             g.drawOval(100,350, 200,200);
             g.drawOval(100,600, 200,200);
-            if ((xClick >= 100 && xClick <=200) && (yClick>=100 && yClick<=200)) {
-                g.setColor(Color.red);
-                g.fillOval(100, 100, 200, 200);
-            }
-            if ((xClick >= 100 && xClick <=200) && (yClick>=100 && yClick<=200)) {
-                g.setColor(Color.yellow);
-                g.fillOval(100,350, 200,200);
-            }
-            if ((xClick >= 100 && xClick <=200) && (yClick>=100 && yClick<=200)) {
+            if (x % 3 == 0 ) {
                 g.setColor(Color.green);
                 g.fillOval(100,600, 200,200);
+                
+            }
+            else if (x % 2 ==0) {
+                g.setColor(Color.yellow);
+                g.fillOval(100,350, 200,200);
+                
+            }
+            else{
+                g.setColor(Color.red);
+                g.fillOval(100, 100, 200, 200);
+              
             }
             //draw three circles well cpaced, conditionals that determine whether or not to fill an oval
             //in a particualr color
@@ -41,7 +44,8 @@ public class TrafficLight extends JPanel implements MouseListener{
 	}
      public void mouseClicked (MouseEvent event) {
 	 	System.out.println ("You're tickling me!");
-	 	this.xClick= event.getX() -50;
+	 	x ++;
+        this.xClick= event.getX() -50;
 		this.yClick= event.getY() -50;
 		repaint();
 
