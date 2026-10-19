@@ -22,19 +22,21 @@ public class TrafficLight extends JPanel implements MouseListener{
 			g.drawOval(100,100, 200,200);
             g.drawOval(100,350, 200,200);
             g.drawOval(100,600, 200,200);
-            if (x % 3 == 0 ) {
-                g.setColor(Color.green);
-                g.fillOval(100,600, 200,200);
+            if (x % 3 == 1 ) {
+                g.setColor(Color.red);
+                g.fillOval(100, 100, 200, 200);
+                
                 
             }
-            else if (x % 2 ==0) {
+            else if (x % 3 ==2) {
                 g.setColor(Color.yellow);
                 g.fillOval(100,350, 200,200);
                 
             }
             else{
-                g.setColor(Color.red);
-                g.fillOval(100, 100, 200, 200);
+                g.setColor(Color.green);
+                g.fillOval(100,600, 200,200);
+               
               
             }
             //draw three circles well cpaced, conditionals that determine whether or not to fill an oval
