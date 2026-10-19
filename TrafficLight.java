@@ -29,13 +29,14 @@ public class TrafficLight extends JPanel implements MouseListener{
                 
             }
             else if (x % 3 ==2) {
-                g.setColor(Color.yellow);
-                g.fillOval(100,350, 200,200);
+                g.setColor(Color.green);
+                g.fillOval(100,600, 200,200);
                 
             }
             else{
-                g.setColor(Color.green);
-                g.fillOval(100,600, 200,200);
+              
+                g.setColor(Color.yellow);
+                g.fillOval(100,350, 200,200);
                
               
             }
